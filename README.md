@@ -1,4 +1,4 @@
-﻿# SIMPLE FILE-SHARING SYSTEM
+﻿# ASSIGNMENT 1: Simple File-Sharing System
 ## How to run
 ### Server:
 1. On the first host/terminal, run `python Asm1_CN/main_server.py`.
