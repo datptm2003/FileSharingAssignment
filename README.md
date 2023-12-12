@@ -1,5 +1,5 @@
 ﻿# SIMPLE FILE-SHARING SYSTEM
-# How to run
+## How to run
 ### Server:
 1. On the first host/terminal, run `python Asm1_CN/main_server.py`.
 2. Enter port, for example `12000`.
