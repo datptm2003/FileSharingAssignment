@@ -1,6 +1,6 @@
 ﻿# ASSIGNMENT 1: Simple File-Sharing System
 ## How to run
-### Server:
+#### Server:
 1. On the first host/terminal, run `python Asm1_CN/main_server.py`.
 2. Enter port, for example `12000`.
 3. Test with following commands (after running at least one client):
@@ -8,7 +8,7 @@
     - Live check the client named `username` for `n` times consecutively: `ping username (n)`
     - List all registered hosts and their information: `show`
 
-### Client:
+#### Client:
 1. On the second host/terminal, run `python Asm1_CN/main_client.py`.
 2. Connect to the server using IP address and listening port, for example `connect 26.152.222.248 12001`.
 3. Register / Log in (if registered), for example `register dat 123` / `login dat 123`.
@@ -18,7 +18,7 @@
     - Delete a file named `fname` in the client's repo: `delete fname`.
     - Search a file named `fname` to check if it is available in any connected client with the same server: `search fname`.
     - View all files in the client's repo: `view`.
-5. More advanced action:
+5. More advanced actions:
     - Change password of the current account, for example `change_password 123 456`.
     - Log out the current account and be offline: `logout`.
     - Disconnect with the current server: `disconnect`.
