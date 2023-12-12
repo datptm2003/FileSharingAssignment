@@ -5,7 +5,7 @@
 2. Enter port, for example `12000`.
 3. Test with following commands (after running at least one client):
     - List all files in `username`'s repo: `discover username`
-    - Live check the client named `username`: `ping username`
+    - Live check the client named `username` for `n` times consecutively: `ping username (n)`
     - List all registered hosts and their information: `show`
 
 ### Client:
