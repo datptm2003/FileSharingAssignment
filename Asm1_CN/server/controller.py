@@ -78,10 +78,13 @@ def login(conn, set_of_host_name, username, password, new_port):
         if username in set_of_host_name:
             true_password = set_of_host_name.get(username)[2]
             hashed_password = hash_password(password)
-            if hashed_password == true_password:
-                conn.send(pickle.dumps([LOGIN_STATUS, True, 1]))  # Registered user with valid password
+            is_online = set_of_host_name.get(username)[3]
+            if hashed_password == true_password and is_online == 0:
+                conn.send(pickle.dumps([LOGIN_STATUS, True, 2]))  # Registered user with valid password
                 set_of_host_name.get(username)[1] = new_port
                 set_of_host_name.get(username)[3] = 1
+            elif hashed_password == true_password and is_online == 1:
+                conn.send(pickle.dumps([LOGIN_STATUS, True, 1]))  # Registered user with valid password, but is already online
             else:
                 conn.send(pickle.dumps([LOGIN_STATUS, True, 0]))  # Registered user with invalid password
         else:

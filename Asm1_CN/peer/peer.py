@@ -187,13 +187,15 @@ class Peer:
                     password = parsed_string[2]
                     self.semaphore.acquire()
                     login_status = self.login(username, password)
-                    if login_status[1] and login_status[2] == 1:
+                    if login_status[1] and login_status[2] == 2:
                         self.is_online = 1
                         self.username = username
                         self.password = password
                         server_repo_path = os.path.join(REPO_PATH, self.host + '/' + str(self.server_port-1))
                         self.repo_path = os.path.join(server_repo_path, username)
                         print("[*] LOGIN successfully.")
+                    elif login_status[1] and login_status[2] == 1:
+                        print("[*] The account is online somewhere, please log out to continue.")
                     elif login_status[1] and login_status[2] == 0:
                         print("[*] Invalid password.")
                     elif login_status[1] and login_status[2] == -1:
